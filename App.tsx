@@ -5,9 +5,14 @@ import {
   DefaultTheme,
   Theme,
 } from "@react-navigation/native";
-import Home from "./screens/Home";
+import Home, { NFT } from "./screens/Home";
 import { Details } from "./screens/Details";
 import { useFonts } from "expo-font";
+
+export type RootStackParamList = {
+  Home: undefined;
+  Details: { data: NFT } | undefined;
+};
 
 const Stack = createStackNavigator();
 

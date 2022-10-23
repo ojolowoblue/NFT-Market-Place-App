@@ -1,10 +1,5 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  TouchableOpacityProps,
-} from "react-native";
+import { ViewStyle } from "react-native";
+import { View, Text, TouchableOpacity, Image, TextStyle } from "react-native";
 import { COLORS, FONTS, SHADOWS, SIZES } from "../../../constants";
 
 export type ImgUrl = React.ComponentProps<typeof Image>["source"];
@@ -14,10 +9,11 @@ interface CircleButtonProps {
   handlePress?: () => void;
 }
 
-interface RectButtonProps extends TouchableOpacityProps {
+type RectButtonProps = {
   minWidth: number;
   handlePress?: () => void;
-}
+} & TextStyle &
+  ViewStyle;
 
 export const CircleButton = ({
   imgUrl,
