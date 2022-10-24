@@ -4,10 +4,11 @@ import { COLORS, FONTS, SHADOWS, SIZES } from "../../../constants";
 
 export type ImgUrl = React.ComponentProps<typeof Image>["source"];
 
-interface CircleButtonProps {
+type CircleButtonProps = {
   imgUrl: ImgUrl;
   handlePress?: () => void;
-}
+} & TextStyle &
+  ViewStyle;
 
 type RectButtonProps = {
   minWidth: number;
@@ -33,6 +34,7 @@ export const CircleButton = ({
         right: 10,
         top: 10,
         ...SHADOWS.light,
+        ...rest,
       }}
       onPress={handlePress}
     >
