@@ -1,9 +1,14 @@
+import * as React from "react";
 import { View, Text, Image } from "react-native";
-import React from "react";
-import { assets, COLORS, FONTS, SIZES } from "../../../constants";
 import { TextInput } from "react-native-gesture-handler";
 
-export const HomeHeader = () => {
+import { assets, COLORS, FONTS, SIZES } from "../../../constants";
+
+interface Props {
+  onSearch: (t: string) => void;
+}
+
+export const HomeHeader = ({ onSearch }: Props) => {
   return (
     <View style={{ backgroundColor: COLORS.primary, padding: SIZES.font }}>
       <View
@@ -50,6 +55,7 @@ export const HomeHeader = () => {
         >
           Hello, Bisola 👋
         </Text>
+
         <Text
           style={{
             fontFamily: FONTS.bold,
@@ -83,7 +89,7 @@ export const HomeHeader = () => {
           <TextInput
             placeholder="Seach NFTs"
             style={{ flex: 1, color: COLORS.white }}
-            onChangeText={() => null}
+            onChangeText={(text) => onSearch(text)}
           />
         </View>
       </View>

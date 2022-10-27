@@ -1,22 +1,27 @@
-import { SafeAreaView, View, FlatList, Text } from "react-native";
-import { FocusedStatusBar, SubInfo } from "./components";
+import * as React from "react";
+import { SafeAreaView, View, FlatList } from "react-native";
+
+import { NFTCard, HomeHeader } from "./components";
+import { FocusedStatusBar } from "../../components/FocusedStatusBar";
 import { COLORS, NFTData } from "../../constants";
-import { NFTCard } from "./components";
-import { HomeHeader } from "./components";
 
 export type NFT = typeof NFTData[number];
 
 export default function Home() {
+  const [searchTerm, setSearchTerm] = React.useState<string>("");
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar backgroundColor={COLORS.primary} />
 
-      <HomeHeader />
+      <HomeHeader onSearch={setSearchTerm} />
 
       <View style={{ flex: 1 }}>
         <View style={{ zIndex: 0 }}>
           <FlatList
-            data={NFTData}
+            data={NFTData.filter((item) =>
+              item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            )}
             renderItem={({ item }: { item: NFT }) => <NFTCard data={item} />}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}

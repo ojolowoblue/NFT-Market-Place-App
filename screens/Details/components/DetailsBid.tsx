@@ -1,7 +1,8 @@
 import { View, Text, Image } from "react-native";
+
 import { COLORS, FONTS, SIZES } from "../../../constants";
 import { NFT } from "../../Home";
-import { EthPrice } from "../../Home/components";
+import { EthPrice } from "../../../components/SubInfo";
 
 export const DetailsBid = ({ bid }: { bid: NFT["bids"][number] }) => {
   return (

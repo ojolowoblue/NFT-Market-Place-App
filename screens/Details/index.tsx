@@ -9,9 +9,11 @@ import {
 } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { CircleButton, RectButton, SubInfo } from "../Home/components";
+import { CircleButton, RectButton } from "../../components/Buttons";
+import { FocusedStatusBar } from "../../components/FocusedStatusBar";
+import { SubInfo } from "../../components/SubInfo";
+
 import { COLORS, SHADOWS, SIZES, FONTS, assets } from "../../constants";
-import { FocusedStatusBar } from "../Home/components";
 import { DetailsBid, DetailsDesc } from "./components";
 import { RootStackParamList } from "../../App";
 import { NFT } from "../Home";

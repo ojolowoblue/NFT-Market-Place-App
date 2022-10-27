@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 
 import { COLORS, FONTS, SIZES } from "../../../constants";
 import { NFT } from "../../Home";
-import { EthPrice, NFTTitle } from "../../Home/components";
+import { EthPrice, NFTTitle } from "../../../components/SubInfo";
 
 export const DetailsDesc = ({ data }: { data: NFT }) => {
   const [text, setText] = React.useState<string>(

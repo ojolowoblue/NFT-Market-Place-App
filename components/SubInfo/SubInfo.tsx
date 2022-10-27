@@ -1,6 +1,6 @@
 import { View, Text, Image } from "react-native";
-import { assets, COLORS, FONTS, SHADOWS, SIZES } from "../../../constants";
-import { ImgUrl } from "./Button";
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from "../../constants";
+import { ImgUrl } from "../Buttons";
 
 interface ImageCmpProps {
   imgUrl: ImgUrl;

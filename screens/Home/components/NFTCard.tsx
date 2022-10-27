@@ -1,8 +1,11 @@
 import { View, Image } from "react-native";
 import { NFT } from "..";
 import { COLORS, SHADOWS, SIZES, assets } from "../../../constants";
-import { CircleButton, SubInfo, NFTTitle, RectButton, EthPrice } from ".";
+import { NFTTitle, EthPrice } from "../../../components/SubInfo";
 import { useNavigation } from "@react-navigation/native";
+
+import { CircleButton, RectButton } from "../../../components/Buttons";
+import { SubInfo } from "../../../components/SubInfo";
 
 type NFTCardProps = {
   data: NFT;

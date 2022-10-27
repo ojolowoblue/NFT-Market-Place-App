@@ -1,6 +1,6 @@
 import { ViewStyle } from "react-native";
-import { View, Text, TouchableOpacity, Image, TextStyle } from "react-native";
-import { COLORS, FONTS, SHADOWS, SIZES } from "../../../constants";
+import { Text, TouchableOpacity, Image, TextStyle } from "react-native";
+import { COLORS, FONTS, SHADOWS, SIZES } from "../../constants";
 
 export type ImgUrl = React.ComponentProps<typeof Image>["source"];
 
